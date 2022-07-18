@@ -35,7 +35,7 @@ const FormularioClientes= () => {
       timer: 3000
     })
  };
- const handleUpdate = async()=>{
+  const handleUpdate = async()=>{
   await axios.post("http://localhost:3001/crearCliente",inputs)
     setInput({
         nombre:"",
@@ -50,7 +50,7 @@ const FormularioClientes= () => {
       button: "Ok",
       timer: 3000
     })
- };
+ }; 
   console.log(inputs);
 
   return (
@@ -72,9 +72,8 @@ const FormularioClientes= () => {
           </Form.Group>
         ))}{" "}
         <br />
-        <Button onClick={handleClick}>Enviar</Button><br/>
-        <Button onClick={handleUpdate}>Editar</Button>
-        <br />
+        <Button onClick={handleClick}variant="outline-primary">Enviar</Button><br/>
+        <Button onClick={handleUpdate}variant="outline-secondary">Editar</Button>
       </div>
       <div className="text-center"style={{backgroundColor:"gainsboro",height:"50px"}}>
         <Button variant="outline-dark" href="/home">Volver</Button>

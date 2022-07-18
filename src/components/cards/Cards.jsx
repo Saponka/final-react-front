@@ -1,10 +1,10 @@
 import React from 'react'
 import Card from './Card'
 
-import imagen1 from '../../assets/image/sunrise.png'
-import imagen2 from '../../assets/image/circles-green.png'
-import imagen3 from '../../assets/image/atom.png' 
-import imagen4 from '../../assets/image/atom.png'
+import imagen1 from '../../assets/image/steve-johnson-1.jpg'
+import imagen2 from '../../assets/image/steve-johnson-3.jpg'
+import imagen3 from '../../assets/image/steve-johnson-2.jpg' 
+import imagen4 from '../../assets/image/steve-johnson-4.jpg'
 
 
 const cards = [

@@ -42,7 +42,7 @@ return (
             <Form.Label className="d-flex  "> {key.toUpperCase()}</Form.Label>
             <Form.Control
               name={key}
-              value={input[key]} //su valor es input[key]; ley es cada uno de los valores del input
+              value={input[key]} 
               onChange={handleChange}
               placeholder={key}
               type={input === "password" ? (key.type = "password") : key}/>

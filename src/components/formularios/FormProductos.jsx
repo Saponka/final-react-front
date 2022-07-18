@@ -69,8 +69,8 @@ const FormularioProducto = () => {
           </Form.Group>
         ))}{" "}
         <br />
-        <Button onClick={handleClick}>Crear</Button><br/>
-        <Button onClick={handleUpdate}>Editar</Button><br/>
+        <Button onClick={handleClick}variant="outline-primary">Crear</Button><br/>
+        <Button onClick={handleUpdate}variant="outline-secondary">Editar</Button><br/>
       </div>
       <div
         className="text-center"

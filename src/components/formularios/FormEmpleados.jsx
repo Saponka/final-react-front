@@ -81,9 +81,8 @@ const FormularioEmpleados= () => {
           </Form.Group>
         ))}{" "}
         <br />
-        <Button onClick={handleClick}>Enviar</Button><br/>
-        <Button onClick={handleUpdate}>Editar</Button>
-        <br />
+        <Button onClick={handleClick}variant="outline-primary">Enviar</Button><br/>
+        <Button onClick={handleUpdate}variant="outline-secondary">Editar</Button>
       </div>
       <div className="text-center" style={{backgroundColor:"gainsboro",height:"50px"}}>
         <Button variant="outline-dark" href="/home">Volver</Button>

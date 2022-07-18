@@ -1,7 +1,6 @@
 import React,{ useEffect, useState } from 'react'
 import {Button,Table} from 'react-bootstrap'
 import NavBar from '../commons/NavBar'
-import Footer from '../commons/Footer'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
@@ -31,20 +30,21 @@ const ListaClientes = () => {
         if (result.isConfirmed) {
           const {data} =  axios.delete("http://localhost:3001/eliminarCliente/" + id);
           console.log(data);
+          setClientes(clientes.filter(cliente => cliente._id !== id))
           Swal.fire(
             'Borrado!',
             'Archivo Eliminado con Exito.',
             'success'
           )
-        }
-      }) 
-      setClientes(clientes.filter(cliente => cliente._id !== id))
+        } 
+      })      
     }
     
     return (
     <>
       <NavBar />
-      <div style={{height:"600px"}}>
+      <div>
+      <h1 className='text-center'>Clientes</h1>
         <Table striped bordered hover style={{ backgroundColor: "gainsboro" }}>
           <thead>
             <tr>
@@ -54,7 +54,7 @@ const ListaClientes = () => {
               <th>Dni</th>
               <th>Producto</th>
               <th>Descripcion</th>
-              <th></th>
+              <th>Editar x DNI</th>
             </tr>
           </thead>
           <tbody >
@@ -67,14 +67,13 @@ const ListaClientes = () => {
                 <td >{cliente.producto}</td>
                 <td >{cliente.descripcion}</td>
                 <td className='text-center'>
-                  <Button  onClick={()=>handleDelete(cliente._id)}>Eliminar</Button>{" "}
-                  <Button href='/formClientes'>Editar</Button>
+                  <Button  onClick={()=>handleDelete(cliente._id)}variant="outline-danger">Eliminar</Button>{" "}
+                  <Button href='/formClientes'variant="outline-secondary">Editar</Button>
                 </td>
               </tr>
             ))}</tbody>
         </Table>
       </div>
-      <Footer/>
     </>    
   )
 }

@@ -1,7 +1,6 @@
 import React,{ useEffect, useState } from 'react'
 import {Button,Table} from 'react-bootstrap'
 import NavBar from '../commons/NavBar'
-import Footer from '../commons/Footer'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
@@ -31,22 +30,23 @@ const ListaProductos = () => {
         if (result.isConfirmed) {
           const {data} =  axios.delete("http://localhost:3001/eliminar/" + id);
           console.log(data);
+          setProductos(productos.filter(producto => producto._id !== id))
           Swal.fire(
             'Borrado!',
             'Archivo Eliminado con Exito.',
             'success'
           )
         }
-      }) 
-     setProductos(productos.filter(producto => producto._id !== id))
+      })     
     }
     
   
     return (
     <>
       <NavBar />
-      <div style={{height:"600px"}}>
-        <Table striped bordered hover style={{ backgroundColor: "gainsboro" }}>
+      <div>
+            <h1 className='text-center'>Productos</h1>
+        <Table bordered hover style={{ backgroundColor: "gainsboro" }}>
           <thead>
             <tr>
               <th>#</th>
@@ -54,7 +54,7 @@ const ListaProductos = () => {
               <th>Marca</th>
               <th>Stock</th>
               <th>Codigo</th>
-              <th></th>
+              <th>Editar x Codigo</th>
             </tr>
           </thead>
           <tbody >
@@ -66,14 +66,13 @@ const ListaProductos = () => {
                 <td >{producto.stock}</td>
                 <td >{producto.codigo}</td>
                 <td className='text-center'>
-                  <Button  onClick={()=>handleDelete(producto._id)}>Eliminar</Button>{" "}
-                  <Button href='/formProductos'>Editar</Button>
+                  <Button onClick={()=>handleDelete(producto._id)} variant="outline-danger">Eliminar</Button>{" "}
+                  <Button href='/formProductos' variant="outline-secondary">Editar</Button>
                 </td>
               </tr>
             ))}</tbody>
         </Table>
       </div>
-      <Footer/>
     </>     
   )
 }

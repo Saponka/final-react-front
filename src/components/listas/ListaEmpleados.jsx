@@ -1,7 +1,6 @@
 import React,{ useEffect, useState }  from 'react'
 import {Button,Table} from 'react-bootstrap'
 import NavBar from '../commons/NavBar'
-import Footer from '../commons/Footer'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
@@ -29,21 +28,22 @@ const ListaEmpleados = () => {
      if (result.isConfirmed) {
        const {data} =  axios.delete("http://localhost:3001/eliminarEmpleado/" + id);
        console.log(data);
+       setEmpleado(empleados.filter(empleado => empleado._id !== id))
        Swal.fire(
          'Borrado!',
          'Archivo Eliminado con Exito.',
          'success'
        )
      }
-   }) 
-   setEmpleado(empleados.filter(empleado => empleado._id !== id))
+   })   
  }
   
   return (
     <>
       <NavBar />
-      <div style={{height:"600px"}}>
-        <Table striped bordered hover style={{ backgroundColor: "tomato" }}>
+      <div>
+      <h1 className='text-center'>Empleados</h1>
+        <Table bordered hover style={{ backgroundColor: "gainsboro" }}>
           <thead>
             <tr>
               <th>#</th>
@@ -55,7 +55,7 @@ const ListaEmpleados = () => {
               <th>Direccion</th>
               <th>Telefono</th>
               <th>Descripcion</th>
-              <th></th>
+              <th>Editar x DNI</th>
             </tr>
           </thead>
           <tbody>
@@ -71,14 +71,13 @@ const ListaEmpleados = () => {
                 <td>{empleado.telefono}</td>
                 <td>{empleado.descripcion}</td>
                 <td className='text-center'>
-                  <Button  onClick={()=>handleDelete(empleado._id)}>Eliminar</Button>{" "}
-                  <Button href='/formEmpleados'>Editar</Button>
+                  <Button  onClick={()=>handleDelete(empleado._id)}variant="outline-danger">Eliminar</Button>{" "}
+                  <Button href='/formEmpleados'variant="outline-secondary">Editar</Button>
                 </td>
               </tr>
             ))}</tbody>
         </Table>
       </div>
-      <Footer/>
     </>
   )
 }

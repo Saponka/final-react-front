@@ -1,7 +1,6 @@
 import React,{ useEffect, useState }  from 'react'
 import {Button,Table } from 'react-bootstrap'
 import NavBar from '../commons/NavBar'
-import Footer from '../commons/Footer'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 
@@ -30,6 +29,7 @@ const ListaProveedores = () => {
      if (result.isConfirmed) {
        const {data} =  axios.delete("http://localhost:3001/eliminarProveedor/" + id);
        console.log(data);
+       setProveedor(proveedores.filter(proveedor => proveedor._id !== id))
        Swal.fire(
          'Borrado!',
          'Archivo Eliminado con Exito.',
@@ -37,14 +37,14 @@ const ListaProveedores = () => {
        )
      }
    }) 
-   setProveedor(proveedores.filter(proveedor => proveedor._id !== id))
  }
   
   return (
     <>
       <NavBar />
-      <div style={{height:"600px"}}>
-        <Table striped bordered hover style={{ backgroundColor: "tomato" }}>
+      <div>
+      <h1 className='text-center'>Proveedores</h1>
+        <Table  bordered hover style={{ backgroundColor: "gainsboro" }}>
           <thead>
             <tr>
               <th>#</th>
@@ -54,7 +54,7 @@ const ListaProveedores = () => {
               <th>Cuit</th>
               <th>Pagos</th>
               <th>Envios</th>
-              <th></th>
+              <th>Editar x CUIT</th>
             </tr>
           </thead>
           <tbody>
@@ -68,16 +68,14 @@ const ListaProveedores = () => {
                 <td>{proveedor.pagos}</td>
                 <td>{proveedor.envios}</td>
                 <td className='text-center'>
-                <Button  onClick={()=>handleDelete(proveedor._id)}>Eliminar</Button>{" "}
-                <Button href='/formProveedores'>Editar</Button><br/>
-                
+                <Button  onClick={()=>handleDelete(proveedor._id)} variant="outline-danger">Eliminar</Button>{" "}
+                <Button href='/formProveedores' variant="outline-secondary">Editar</Button><br/>  
                 </td>
               </tr>
             ))}</tbody>
         </Table>
       </div>
-      <Footer/>
-    </>
+   </>
   )
 }
 
