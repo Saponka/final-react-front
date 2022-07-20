@@ -47,6 +47,7 @@ transform: scale(1.5);
     box-shadow: 0 19px 38px #5f6264, 0 15px 12px rgb(33 31 31);
 }
 .login-form input[type = "password"],
+.login-form input[type = "email"],
 .login-form input[type = "text"]{
     width: 85%;
     padding: 15px;

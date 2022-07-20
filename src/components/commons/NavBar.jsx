@@ -2,9 +2,8 @@ import React from 'react'
 import {Navbar,Nav, Container} from "react-bootstrap";
 import image from "../../assets/image/bonsai-garden.svg"
 
-
 const NavBar = () => {
-  //const fechaIngles = new Date().toDateString();
+ 
   const dia =  diatoString();
   const fecha = new Date().getDate();
   const mes = month();
