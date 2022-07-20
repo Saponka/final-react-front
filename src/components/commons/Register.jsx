@@ -28,7 +28,7 @@ const Register = () => {
      /* Validacion */
      const [validated, setValidated] = useState(false);
 
-     const handleSubmit = async(event) => {
+     const handleSubmit = (event) => {
 
      const form = event.currentTarget;
      
@@ -58,7 +58,6 @@ return (
               name={key}
               value={input[key]}
               required
-             
               onChange={handleChange}
               placeholder={`Ingrese su ${key}`}
               type={input === "password" ? (key.type = "password") : key}/>
