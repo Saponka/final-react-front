@@ -9,7 +9,7 @@ const Card = ({title,image,url,url2}) => {
       </div>
       <div className='card-body text-secondary'>
         <h4 className='card-title '>{title}</h4>
-        <p className='card-text '>Bienvenidos al control de datos de {title}; En el podra Cargar, Actualizar,Borrar y hasta Buscar sus {title} desde la Base de Datos del Sistema.</p>
+        <p className='card-text '>Bienvenidos al control de datos; En el podra Cargar, Actualizar,Borrar y hasta Ver sus {title} desde la Base de Datos del Sistema.</p>
         <a href={url2} className='btn btn-outline-light' target="blank" >Cargar {title}</a><br/><br/>
         <a href={url} className='btn btn-outline-light' target="blank" >Lista de {title}</a>
       </div>

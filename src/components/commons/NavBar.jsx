@@ -1,10 +1,9 @@
 import React from 'react'
 import {Navbar,Nav, Container} from "react-bootstrap";
+import image from "../../assets/image/bonsai-garden.svg"
+
 
 const NavBar = () => {
-   /*  const handleLogOut = async()=>{
-        if(){}
-    } */
   //const fechaIngles = new Date().toDateString();
   const dia =  diatoString();
   const fecha = new Date().getDate();
@@ -66,9 +65,9 @@ const NavBar = () => {
 
 
   return (
-    <Navbar /* bg="dark" */ variant="dark"  sticky="top" expand='lg' style={{fontFamily:"Audiowide",background: "linear-gradient(to bottom, #000000, #434343)"}} >
+    <Navbar variant="dark" expand='lg' style={{fontFamily:"Audiowide",background: "linear-gradient(to bottom, #000000, #434343)"}} >
     <Container>
-    <Navbar.Brand href="/home">Home</Navbar.Brand>
+    <Navbar.Brand href="/home"><img style={{width:"150px",height:"100px"}} alt="bonsai" src={image} /></Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse className="justify-content-end"  id="basic-navbar-nav">
     <Nav className="me-auto nav nav-tabs">

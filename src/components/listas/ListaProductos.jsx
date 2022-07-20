@@ -45,16 +45,17 @@ const ListaProductos = () => {
     <>
       <NavBar />
       <div>
-            <h1 className='text-center'>Productos</h1>
-        <Table bordered hover style={{ backgroundColor: "gainsboro" }}>
+            <h1 className='text-center'style={{fontFamily:'Fredericka the Great'}}>Productos</h1>
+        <Table bordered hover style={{ backgroundColor: "gainsboro",fontFamily:"Original Surfer" }}>
           <thead>
             <tr>
               <th>#</th>
               <th>Nombre</th>
               <th>Marca</th>
               <th>Stock</th>
+              <th>Precio</th>
               <th>Codigo</th>
-              <th>Editar x Codigo</th>
+              <th className='text-center'>Editar x Codigo</th>
             </tr>
           </thead>
           <tbody >
@@ -64,6 +65,7 @@ const ListaProductos = () => {
                 <td >{producto.nombre}</td>
                 <td >{producto.marca}</td>
                 <td >{producto.stock}</td>
+                <td >{producto.precio}</td>
                 <td >{producto.codigo}</td>
                 <td className='text-center'>
                   <Button onClick={()=>handleDelete(producto._id)} variant="outline-danger">Eliminar</Button>{" "}

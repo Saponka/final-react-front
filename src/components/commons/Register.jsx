@@ -8,6 +8,7 @@ const Register = () => {
 
     const [input,setInput] = useState({
       user:"",
+      email:"",
       password:""
       })
 
@@ -19,6 +20,7 @@ const Register = () => {
      await axios.post("http://localhost:3001/registro",input)
       setInput({
       user:"",
+      email:"",
       password:"",
      });
      
@@ -33,18 +35,18 @@ const Register = () => {
  console.log(input);
 
 return (
-  <div style={{ height: "750px", background: "gainsboro" }}className="d-flex flex-column align-items-center text-center pt-3 ">
+  <div style={{height:"750px",background:"gainsboro"}}className="d-flex flex-column align-items-center text-center pt-3 ">
     <div className="d-flex flex-column align-items-center pt-3 mb-5 register-form animate__animated animate__backInDown  animate__fast ">
       <h1>Form Register</h1>
       <Form className="d-flex flex-column ">
         {Object.keys(input).map((key, index) => (
-          <Form.Group key={index} style={{ width: "350px" }}>
-            <Form.Label className="d-flex  "> {key.toUpperCase()}</Form.Label>
+          <Form.Group key={index} style={{width:"350px"}}>
+            <Form.Label className="d-flex"> {key.toUpperCase()}</Form.Label>
             <Form.Control
               name={key}
               value={input[key]} 
               onChange={handleChange}
-              placeholder={key}
+              placeholder={`Ingrese su ${key}`}
               type={input === "password" ? (key.type = "password") : key}/>
           </Form.Group>
         ))}
@@ -54,7 +56,7 @@ return (
             variant="outline-primary"
             size="lg"
             className="me-2 animate__animated animate__backInDown"
-            style={{ width: "50%" }}
+            style={{width:"50%"}}
             onClick={handleClick}>Save</Button>
           <br />
           <Button
@@ -62,7 +64,7 @@ return (
             size="lg"
             className="animate__animated animate__backInDown"
             href="/"
-            style={{ width: "50%" }}>Volver</Button>
+            style={{width:"50%"}}>Volver</Button>
         </div>
       </Form>
     </div>

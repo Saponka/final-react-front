@@ -11,19 +11,20 @@ const Login = () => {
 
         const navigate = useNavigate()
 
-        const [input,setInput] = useState({user:"",password:"",})
+        const [input,setInput] = useState({user:"",email:"",password:"",})
         const handleChange =(e)=>{
           setInput({...input,[e.target.name]: e.target.value});
         };
         const handleClick =async(e)=>{
          e.preventDefault()
          await axios.post("http://localhost:3001/login",input)
+         console.log(input);
          Swal.fire({
           icon: 'success',
           title: 'Bienvenido '+ input.user,
           timer: 3000
          })
-         setInput({ user:"",password:"" })
+         setInput({ user:"",email:"",password:"" })
          navigate('/home')
         }
         ///////////////////////////////////////////////////
@@ -33,10 +34,11 @@ const Login = () => {
       <div className=" login-form animate__animated animate__rotateIn animate__fast">
            <form action='' method="post" >
               <input type="text" name="user"id="user" placeholder="User" required onChange={handleChange} />
+              <input type="text" name="email"id="email" placeholder="Email" required onChange={handleChange} />
               <input type="password" name="password" id="pass" placeholder="Password" required onChange={handleChange}/>
-              <input type="submit" className="btn btn-lg btn-outline-success mb-2" value="Login" style={{width:"260px"}}  onClick={handleClick} />
+              <input type="submit" className="btn btn-lg btn-outline-success mb-2" value="Login" style={{width:"200px"}}  onClick={handleClick} />
           </form>
-          <a href="/register" className="btn btn-lg btn-outline-dark" style={{width:"260px"}}>Register</a>     
+          <a href="/register" className="btn btn-lg btn-outline-dark" style={{width:"200px"}} >Register</a>     
       </div>
    </div> 
     )

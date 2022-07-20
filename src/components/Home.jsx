@@ -5,6 +5,7 @@ import Footer from "./commons/Footer";
 import Cards from "../components/cards/Cards";
 import './style.css';
 
+
 const Home = () => {
   return (
     <>
@@ -13,19 +14,18 @@ const Home = () => {
         <Container fluid>
           <Row className="d-grid align-content-center"
             style={{
-              height: "100px",
               background: "linear-gradient(to bottom, #304352, #d7d2cc)",
               borderBottom: "1px solid black",
             }}>
-            <h1 className="text-center my-5  animate__animated animate__flip" style={{ fontFamily:"Audiowide"}}>
-              StokSystem{" "}
+            <h1 className="text-center my-5 mb-5 animate__animated animate__slideInRight" style={{ fontFamily:"Audiowide",fontSize:"80px"}}>
+              Bonzai ZenTek
             </h1>
-          </Row>{" "}
+          </Row>
            <Row>
             <Col className="text-center pt-4"
               style={{ backgroundColor: "azure", border: " 1px solid black" }}
               lg={12}>
-              <h1 className="animate__animated  animate__zoomIn" style={{color:"black"}}>{" "}
+              <h1 className="animate__animated  animate__zoomIn" style={{color:"black",fontFamily:"Original Surfer"}}>{" "}
                 Control de Datos
               </h1>
               <br />
@@ -33,13 +33,9 @@ const Home = () => {
               <br />
             </Col>
           </Row>
-          {/*  <Row >
-          <Col style={{ backgroundColor: "dimgray", border:" 1px solid black" }} lg={4} md={6} className="text-center  pt-4">
-            <h1>Control de Ventas</h1><br/>
-            <Button variant="outline-dark" size="lg" className="  animate__animated  animate__tada ">Ventas</Button><br/><br/>
-          </Col>
-          <Col style={{ backgroundColor: "white", border:" 1px solid black" }}><p className="p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel facilis eius consectetur delectus iste suscipit quisquam quaerat, alias temporibus at libero porro voluptatibus vero! Consequatur nostrum autem nesciunt nemo mollitia?</p></Col>
-        </Row> */}
+            <Row >
+          <Col style={{ backgroundColor: "white", border:" 1px solid black" }}><p className="p-5">Cada Tarjeta tiene su forma de editar sus datos.<b> PRODUCTOS:</b> Se Actualiza Buscando por numero de Codigo;<b> PROVEEDORES:</b> Se Actualiza Buscando por numero de CUIT; <b>CLIENTES:</b> Se Actualiza Buscando por numero de DNI;<b> EMPLEADOS:</b> Se Actualiza Buscando por numero de DNI. </p></Col>
+        </Row> 
         </Container>
       </div>
       <Footer/>

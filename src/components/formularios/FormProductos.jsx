@@ -11,6 +11,7 @@ const FormularioProducto = () => {
   nombre:"",
   marca:"",
   stock:"",
+  precio:"",
   codigo:""
  })
 
@@ -24,6 +25,7 @@ const FormularioProducto = () => {
         nombre:"",
         marca:"",
         stock:"",
+        precio:"",
         codigo:""
     })
     Swal.fire({
@@ -39,6 +41,7 @@ const FormularioProducto = () => {
           nombre:"",
           marca:"",
           stock:"",
+          precio:"",
           codigo:""
       })
       Swal.fire({
@@ -54,7 +57,7 @@ const FormularioProducto = () => {
     <>
       <NavBar />
       <div className="d-flex flex-column align-items-center pt-3"
-        style={{height:"510px",backgroundColor:"gainsboro"}}>
+        style={{height:"580px",backgroundColor:"gainsboro"}}>
         <h1>Productos</h1>
         <br />
         {Object.keys(inputs).map((key, index) => (

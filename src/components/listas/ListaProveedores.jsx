@@ -43,8 +43,8 @@ const ListaProveedores = () => {
     <>
       <NavBar />
       <div>
-      <h1 className='text-center'>Proveedores</h1>
-        <Table  bordered hover style={{ backgroundColor: "gainsboro" }}>
+      <h1 className='text-center' style={{fontFamily:'Fredericka the Great'}}>Proveedores</h1>
+        <Table  bordered hover style={{ backgroundColor: "gainsboro",fontFamily:"Original Surfer"}}>
           <thead>
             <tr>
               <th>#</th>
@@ -54,7 +54,7 @@ const ListaProveedores = () => {
               <th>Cuit</th>
               <th>Pagos</th>
               <th>Envios</th>
-              <th>Editar x CUIT</th>
+              <th className='text-center'>Editar x CUIT</th>
             </tr>
           </thead>
           <tbody>

@@ -44,8 +44,8 @@ const ListaClientes = () => {
     <>
       <NavBar />
       <div>
-      <h1 className='text-center'>Clientes</h1>
-        <Table striped bordered hover style={{ backgroundColor: "gainsboro" }}>
+      <h1 className='text-center' style={{fontFamily:'Fredericka the Great'}}>Clientes</h1>
+        <Table  bordered hover style={{ backgroundColor: "gainsboro",fontFamily:'Original Surfer',color:"black" }}>
           <thead>
             <tr>
               <th>#</th>
@@ -54,7 +54,7 @@ const ListaClientes = () => {
               <th>Dni</th>
               <th>Producto</th>
               <th>Descripcion</th>
-              <th>Editar x DNI</th>
+              <th className='text-center'>Editar x DNI</th>
             </tr>
           </thead>
           <tbody >
