@@ -12,7 +12,6 @@ import FormularioProducto from './components/formularios/FormProductos';
 import FormularioProveedor from './components/formularios/FormProveedores';
 import FormularioEmpleados from './components/formularios/FormEmpleados';
 import FormularioClientes from './components/formularios/FormClientes';
-import Error from './components/commons/Error';
 
 function App() {
   return (
