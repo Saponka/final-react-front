@@ -21,7 +21,7 @@ const FormularioProveedor= () => {
  };
 
  const handleClick = async()=>{
-  await axios.post("http://localhost:3001/crearProveedor",inputs)
+  await axios.post(process.env.REACT_APP_SERVER+"/crearProveedor",inputs)
     setInput({
         nombre:"",
         apellido:"",
@@ -38,7 +38,7 @@ const FormularioProveedor= () => {
     })
  };
  const handleUpdate = async()=>{
-  await axios.post("http://localhost:3001/crearProveedor",inputs)
+  await axios.post(process.env.REACT_APP_SERVER+"/crearProveedor",inputs)
     setInput({
       nombre:"",
       apellido:"",

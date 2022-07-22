@@ -23,7 +23,7 @@ const FormularioEmpleados= () => {
  };
 
  const handleClick = async()=>{
-  await axios.post("http://localhost:3001/crearEmpleado",inputs)
+  await axios.post(process.env.REACT_APP_SERVER+"/crearEmpleado",inputs)
     setInput({
         nombre:"",
         apellido:"",
@@ -44,7 +44,7 @@ const FormularioEmpleados= () => {
  console.log(inputs);
 
  const handleUpdate = async()=>{
-  await axios.post("http://localhost:3001/crearEmpleado",inputs)
+  await axios.post(process.env.REACT_APP_SERVER+"/crearEmpleado",inputs)
     setInput({
         nombre:"",
         apellido:"",

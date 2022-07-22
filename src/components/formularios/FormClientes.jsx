@@ -20,7 +20,7 @@ const FormularioClientes= () => {
  };
 
  const handleClick = async()=>{
-  await axios.post("http://localhost:3001/crearCliente",inputs)
+  await axios.post(process.env.REACT_APP_SERVER+"/crearCliente",inputs)
     setInput({
         nombre:"",
         apellido:"",
@@ -36,7 +36,7 @@ const FormularioClientes= () => {
     })
  };
   const handleUpdate = async()=>{
-  await axios.post("http://localhost:3001/crearCliente",inputs)
+  await axios.post(process.env.REACT_APP_SERVER+"/crearCliente",inputs)
     setInput({
         nombre:"",
         apellido:"",

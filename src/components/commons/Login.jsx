@@ -17,7 +17,7 @@ const Login = () => {
         };
         const handleClick =async(e)=>{
          e.preventDefault()
-         await axios.post("http://localhost:3001/login",input)
+         await axios.post(process.env.REACT_APP_SERVER+"/login",input)
          Swal.fire({
           icon: 'success',
           title: 'Bienvenido '+ input.email,

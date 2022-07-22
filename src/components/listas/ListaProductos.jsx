@@ -10,7 +10,7 @@ const ListaProductos = () => {
     
     useEffect(()=>{
      const getProductos = async()=>{
-        const {data} = await axios.get('http://localhost:3001/productos')
+        const {data} = await axios.get(process.env.REACT_APP_SERVER+'/productos')
         setProductos(data.producto);
        console.log(data.producto);
     }
@@ -28,7 +28,7 @@ const ListaProductos = () => {
         confirmButtonText: 'Si, Eliminar!'
       }).then((result) => {
         if (result.isConfirmed) {
-          const {data} =  axios.delete("http://localhost:3001/eliminar/" + id);
+          const {data} =  axios.delete(process.env.REACT_APP_SERVER+"/eliminar/" + id);
           console.log(data);
           setProductos(productos.filter(producto => producto._id !== id))
           Swal.fire(

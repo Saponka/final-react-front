@@ -17,7 +17,7 @@ const Register = () => {
       };
 
     const handleClick =  async()=>{
-     await axios.post("http://localhost:3001/registro",input)
+     await axios.post(process.env.REACT_APP_SERVER+"/registro",input)
      setInput({
       user:"",
       email:"",
@@ -35,10 +35,14 @@ const Register = () => {
      if (form.checkValidity() === false) {
         event.preventDefault();
         event.stopPropagation();
-     }else {
+     }else if(form.checkValidity() === true) {
+      event.preventDefault();
+        event.stopPropagation();
       Swal.fire({
         icon: 'success',
-        title: 'Usuario Creado', 
+        title: 'Usuario Creado',
+        showConfirmButton: false,
+        timer: 3000 
         })
     }
      setValidated(true);

@@ -10,7 +10,7 @@ const ListaClientes = () => {
     
     useEffect(()=>{
      const getClientes = async()=>{
-        const {data} = await axios.get('http://localhost:3001/clientes')
+        const {data} = await axios.get(process.env.REACT_APP_SERVER+'/clientes')
         setClientes(data.cliente);
        console.log(data.cliente);
         }
@@ -28,7 +28,7 @@ const ListaClientes = () => {
         confirmButtonText: 'Si, Eliminar!'
       }).then((result) => {
         if (result.isConfirmed) {
-          const {data} =  axios.delete("http://localhost:3001/eliminarCliente/" + id);
+          const {data} =  axios.delete(process.env.REACT_APP_SERVER+"/eliminarCliente/" + id);
           console.log(data);
           setClientes(clientes.filter(cliente => cliente._id !== id))
           Swal.fire(

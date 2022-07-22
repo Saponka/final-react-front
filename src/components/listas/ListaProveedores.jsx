@@ -10,7 +10,7 @@ const ListaProveedores = () => {
   
   useEffect(()=>{
     const getProveedores = async()=>{
-      const {data} = await axios.get('http://localhost:3001/proveedores')
+      const {data} = await axios.get(process.env.REACT_APP_SERVER+'/proveedores')
       setProveedor(data.proveedor);
     }
     getProveedores();
@@ -27,7 +27,7 @@ const ListaProveedores = () => {
      confirmButtonText: 'Si, Eliminar!'
    }).then((result) => {
      if (result.isConfirmed) {
-       const {data} =  axios.delete("http://localhost:3001/eliminarProveedor/" + id);
+       const {data} =  axios.delete(process.env.REACT_APP_SERVER+"/eliminarProveedor/" + id);
        console.log(data);
        setProveedor(proveedores.filter(proveedor => proveedor._id !== id))
        Swal.fire(
