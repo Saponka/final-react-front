@@ -27,7 +27,6 @@ const Login = () => {
          navigate('/home')
          
         }
-        ///////////////////////////////////////////////////
        
     return (
       <div style={{height:"750px",backgroundColor:"gainsboro"}} className="d-flex flex-column align-items-center text-center pt-3 " >

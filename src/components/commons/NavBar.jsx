@@ -62,7 +62,6 @@ const NavBar = () => {
     }  
 };
 
-
   return (
     <Navbar variant="dark" expand='lg' style={{fontFamily:"Audiowide",background: "linear-gradient(to bottom, #000000, #434343)"}} >
     <Container>
