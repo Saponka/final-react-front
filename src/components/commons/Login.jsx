@@ -25,6 +25,7 @@ const Login = () => {
          })
          setInput({email:"",password:"" })
          navigate('/home')
+         
         }
         ///////////////////////////////////////////////////
        
