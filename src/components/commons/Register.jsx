@@ -17,7 +17,7 @@ const Register = () => {
       };
 
     const handleClick =  async()=>{
-     await axios.post(process.env.REACT_APP_SERVER+"/registro",input)
+     await axios.post(`process.env.${REACT_APP_SERVER}"/registro"`,input)
      setInput({
       user:"",
       email:"",

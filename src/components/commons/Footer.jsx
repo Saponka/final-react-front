@@ -11,7 +11,8 @@ const Footer = ()=>{
         {
           id:2,url:"https://github.com/Saponka",className:"bi bi-github fs-1"
         }
-    ]
+    ];
+
     return(
         <Container fluid  className="px-4 px-lg-5" style={{height:"130px",background:"linear-gradient(to bottom, #bdc3c7, #2c3e50)"}}>
          <Row>
@@ -24,5 +25,5 @@ const Footer = ()=>{
          <p className="text-muted small mt-4 text-center"> Copyright © F_3-H_R {date}</p>
         </Container>
     )   
-}
+};
 export default Footer;
