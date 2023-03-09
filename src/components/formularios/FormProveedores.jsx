@@ -21,7 +21,7 @@ const FormularioProveedor= () => {
  };
 
  const handleClick = async()=>{
-  await axios.post(process.env.REACT_APP_SERVER+"/crearProveedor",inputs)
+  await axios.post("https://final-react-back-production.up.railway.app/crearProveedor",inputs)
     setInput({
         nombre:"",
         apellido:"",
@@ -38,7 +38,7 @@ const FormularioProveedor= () => {
     })
  };
  const handleUpdate = async()=>{
-  await axios.post(process.env.REACT_APP_SERVER+"/crearProveedor",inputs)
+  await axios.post("https://final-react-back-production.up.railway.app/crearProveedor",inputs)
     setInput({
       nombre:"",
       apellido:"",

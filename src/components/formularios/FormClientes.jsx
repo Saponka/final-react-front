@@ -20,7 +20,7 @@ const FormularioClientes= () => {
  };
 
  const handleClick = async()=>{
-  await axios.post(process.env.REACT_APP_SERVER+"/crearCliente",inputs)
+  await axios.post("https://final-react-back-production.up.railway.app/crearCliente",inputs)
     setInput({
         nombre:"",
         apellido:"",
@@ -36,7 +36,7 @@ const FormularioClientes= () => {
     })
  };
   const handleUpdate = async()=>{
-  await axios.post(process.env.REACT_APP_SERVER+"/crearCliente",inputs)
+  await axios.post("https://final-react-back-production.up.railway.app/crearCliente",inputs)
     setInput({
         nombre:"",
         apellido:"",

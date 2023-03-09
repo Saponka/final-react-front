@@ -20,7 +20,7 @@ const FormularioProducto = () => {
  };
 
  const handleClick = async()=>{
-  await axios.post(process.env.REACT_APP_SERVER+"/crearProducto",inputs)
+  await axios.post("https://final-react-back-production.up.railway.app/crearProducto",inputs)
     setInput({
         nombre:"",
         marca:"",
@@ -36,7 +36,7 @@ const FormularioProducto = () => {
     })
   };
   const handleUpdate = async()=>{
-    await axios.post(process.env.REACT_APP_SERVER+"/crearProducto",inputs)
+    await axios.post("https://final-react-back-production.up.railway.app/crearProducto",inputs)
       setInput({
           nombre:"",
           marca:"",
