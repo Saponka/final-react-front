@@ -18,7 +18,7 @@ const Login = () => {
 
       const handleClick =async(e)=>{
           e.preventDefault();
-         await axios.post( process.env.REACT_APP_SERVER,input)
+         await axios.post( process.env.REACT_APP_DEPLOY,input)
          Swal.fire({
            icon: 'success',
            title: 'Bienvenido '+ input.email,
