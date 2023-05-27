@@ -12,6 +12,8 @@ import FormularioProducto from './components/formularios/FormProductos';
 import FormularioProveedor from './components/formularios/FormProveedores';
 import FormularioEmpleados from './components/formularios/FormEmpleados';
 import FormularioClientes from './components/formularios/FormClientes';
+import FormAlumnos from './components/formularios/FormAlumnos';
+import ListaAlumnos from './components/listas/ListaAlumnos';
 
 
 function App() {
@@ -26,10 +28,12 @@ function App() {
         <Route path="/listaProveedores" element={<ListaProveedores/>}></Route>
         <Route path="/listaClientes" element={<ListaClientes/>}></Route>
         <Route path="/listaEmpleados" element={<ListaEmpleados/>}></Route>
+        <Route path="/listaAlumnos" element={<ListaAlumnos/>}></Route>
         <Route path="/formProductos" element={<FormularioProducto/>}></Route>
         <Route path="/formProveedores" element={<FormularioProveedor/>}></Route>
         <Route path="/formEmpleados" element={<FormularioEmpleados/>}></Route>
         <Route path="/formClientes" element={<FormularioClientes/>}></Route>
+        <Route path="/formAlumnos" element={<FormAlumnos/>}></Route>
       </Routes>
     </Router>
   </>
