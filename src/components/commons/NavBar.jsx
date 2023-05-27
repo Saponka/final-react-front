@@ -31,6 +31,7 @@ const NavBar = () => {
                  <Nav.Link href="/listaProveedores">Proveedores</Nav.Link>
                  <Nav.Link href="/listaClientes">Clientes</Nav.Link>
                  <Nav.Link href="/listaEmpleados">Empleados</Nav.Link>
+                 <Nav.Link href="/listaAlumnos">Alumnos</Nav.Link>
              </Nav>
           <Navbar.Text className="me-5">
               {diasEnString()} {fecha} {month()} {date}
