@@ -35,6 +35,13 @@ const cards = [
       image:imagen4,
       url:'/listaEmpleados',
       url2:'/formEmpleados'
+    },
+    {
+      id:5,
+      title:'Alumnos',
+      image:imagen1,
+      url:'/listaAlumnos',
+      url2:'/formAlumnos'
     }
   ]
 const Cards = () => {
