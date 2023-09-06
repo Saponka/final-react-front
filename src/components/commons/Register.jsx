@@ -17,7 +17,7 @@ const Register = () => {
       };
 
     const handleClick =  async()=>{
-     await axios.post("https://final-react-back-production.up.railway.app/registro",input)
+     await axios.post(/* "https://final-react-back-production.up.railway.app */"http://localhost:3001/registro",input)
      setInput({
       user:"",
       email:"",
