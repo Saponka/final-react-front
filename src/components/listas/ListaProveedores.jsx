@@ -10,7 +10,7 @@ const ListaProveedores = () => {
   
   useEffect(()=>{
     const getProveedores = async()=>{
-      const {data} = await axios.get('https://final-react-back-production.up.railway.app/proveedores')
+      const {data} = await axios.get('http://localhost:3001/proveedores')
       setProveedor(data.proveedor);
     }
     getProveedores();
@@ -27,7 +27,7 @@ const ListaProveedores = () => {
      confirmButtonText: 'Si, Eliminar!'
    }).then((result) => {
      if (result.isConfirmed) {
-       const {data} =  axios.delete("https://final-react-back-production.up.railway.app/eliminarProveedor/" + id);
+       const {data} =  axios.delete("http://localhost:3001/eliminarProveedor/" + id);
        console.log(data);
        setProveedor(proveedores.filter(proveedor => proveedor._id !== id))
        Swal.fire(
@@ -74,6 +74,7 @@ const ListaProveedores = () => {
               </tr>
             ))}</tbody>
         </Table>
+        <Button variant="outline-dark" href="/home">Volver</Button>
       </div>
    </>
   )

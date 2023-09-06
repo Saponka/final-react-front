@@ -10,7 +10,7 @@ const ListaProductos = () => {
     
     useEffect(()=>{
      const getProductos = async()=>{
-        const {data} = await axios.get('https://final-react-back-production.up.railway.app/productos')
+        const {data} = await axios.get('http://localhost:3001/productos')
         setProductos(data.producto);
        console.log(data.producto);
     }
@@ -28,7 +28,7 @@ const ListaProductos = () => {
         confirmButtonText: 'Si, Eliminar!'
       }).then((result) => {
         if (result.isConfirmed) {
-          const {data} =  axios.delete("https://final-react-back-production.up.railway.app/eliminar/" + id);
+          const {data} =  axios.delete("http://localhost:3001/eliminar/" + id);
           console.log(data);
           setProductos(productos.filter(producto => producto._id !== id))
           Swal.fire(
@@ -74,6 +74,7 @@ const ListaProductos = () => {
               </tr>
             ))}</tbody>
         </Table>
+        <Button variant="outline-dark" href="/home">Volver</Button>
       </div>
     </>     
   )

@@ -10,7 +10,7 @@ const ListaEmpleados = () => {
   
   useEffect(()=>{
     const getEmpleados = async()=>{
-      const {data} = await axios.get('https://final-react-back-production.up.railway.app/empleados')
+      const {data} = await axios.get('http://localhost:3001/empleados')
       setEmpleado(data.empleado);
     }
     getEmpleados();
@@ -26,7 +26,7 @@ const ListaEmpleados = () => {
      confirmButtonText: 'Si, Eliminar!'
    }).then((result) => {
      if (result.isConfirmed) {
-       const {data} =  axios.delete("https://final-react-back-production.up.railway.app/eliminarEmpleado/" + id);
+       const {data} =  axios.delete("http://localhost:3001/eliminarEmpleado/" + id);
        console.log(data);
        setEmpleado(empleados.filter(empleado => empleado._id !== id))
        Swal.fire(
@@ -77,6 +77,7 @@ const ListaEmpleados = () => {
               </tr>
             ))}</tbody>
         </Table>
+        <Button variant="outline-dark" href="/home">Volver</Button>
       </div>
     </>
   )

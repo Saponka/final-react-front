@@ -25,7 +25,7 @@ const FormAlumnos = () => {
        };
       
     const handleClick = async()=>{
-        await axios.post("https://final-react-back-production.up.railway.app/crearAlumno",inputs)
+        await axios.post("http://localhost:3001/crearAlumno",inputs)
           setInput({ nombre:"",apellido:"",dni:"",cuit:"",direccion:"",telefono:"",
           curso:"",
           año:"",
@@ -41,7 +41,7 @@ const FormAlumnos = () => {
        console.log(inputs);
       
     const handleUpdate = async()=>{
-        await axios.post("https://final-react-back-production.up.railway.app/crearAlumno",inputs)
+        await axios.post("http://localhost:3001/crearAlumno",inputs)
           
         setInput({ nombre:"",apellido:"",dni:"",cuit:"",direccion:"",telefono:"",
           curso:"",

@@ -20,7 +20,7 @@ const FormularioClientes= () => {
  };
 
  const handleClick = async()=>{
-  await axios.post("https://final-react-back-production.up.railway.app/crearCliente",inputs)
+  await axios.post("http://localhost:3001/crearCliente",inputs)
     setInput({
         nombre:"",
         apellido:"",
@@ -36,7 +36,7 @@ const FormularioClientes= () => {
     })
  };
   const handleUpdate = async()=>{
-  await axios.post("https://final-react-back-production.up.railway.app/crearCliente",inputs)
+  await axios.post("http://localhost:3001/crearCliente",inputs)
     setInput({
         nombre:"",
         apellido:"",
@@ -71,10 +71,18 @@ const FormularioClientes= () => {
               onChange={handleChange}/>
           </Form.Group>
         ))}{" "}
-        <br />
-        <Button onClick={handleClick}variant="outline-primary">Enviar</Button><br/>
-        <Button onClick={handleUpdate}variant="outline-secondary">Editar</Button>
+      
       </div>
+      <div className='text-center'>
+        <div>
+        <Button style={{width:"150px"}} onClick={handleClick}variant="outline-primary">Enviar</Button>
+        </div>
+        <br />
+        <div>
+        <Button style={{width:"150px"}} onClick={handleUpdate}variant="outline-secondary">Editar</Button>
+        </div>
+      </div>
+      <br />
       <div className="text-center"style={{backgroundColor:"gainsboro",height:"50px"}}>
         <Button variant="outline-dark" href="/home">Volver</Button>
       </div>

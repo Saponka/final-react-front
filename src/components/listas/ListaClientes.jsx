@@ -10,7 +10,7 @@ const ListaClientes = () => {
     
     useEffect(()=>{
      const getClientes = async()=>{
-        const {data} = await axios.get('https://final-react-back-production.up.railway.app/clientes')
+        const {data} = await axios.get('http://localhost:3001/clientes')
         setClientes(data.cliente);
        console.log(data.cliente);
         }
@@ -28,7 +28,7 @@ const ListaClientes = () => {
         confirmButtonText: 'Si, Eliminar!'
       }).then((result) => {
         if (result.isConfirmed) {
-          const {data} =  axios.delete("https://final-react-back-production.up.railway.app/eliminarCliente/" + id);
+          const {data} =  axios.delete("http://localhost:3001/eliminarCliente/" + id);
           console.log(data);
           setClientes(clientes.filter(cliente => cliente._id !== id))
           Swal.fire(
@@ -73,6 +73,7 @@ const ListaClientes = () => {
               </tr>
             ))}</tbody>
         </Table>
+        <Button variant="outline-dark" href="/home">Volver</Button>
       </div>
     </>    
   )

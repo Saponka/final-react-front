@@ -20,7 +20,7 @@ const FormularioProducto = () => {
  };
 
  const handleClick = async()=>{
-  await axios.post("https://final-react-back-production.up.railway.app/crearProducto",inputs)
+  await axios.post("http://localhost:3001/crearProducto",inputs)
     setInput({
         nombre:"",
         marca:"",
@@ -36,7 +36,7 @@ const FormularioProducto = () => {
     })
   };
   const handleUpdate = async()=>{
-    await axios.post("https://final-react-back-production.up.railway.app/crearProducto",inputs)
+    await axios.post("http://localhost:3001/crearProducto",inputs)
       setInput({
           nombre:"",
           marca:"",
@@ -57,7 +57,7 @@ const FormularioProducto = () => {
     <>
       <NavBar />
       <div className="d-flex flex-column align-items-center pt-3"
-        style={{height:"580px",backgroundColor:"gainsboro"}}>
+        style={{height:"550px",backgroundColor:"gainsboro"}}>
         <h1>Productos</h1>
         <br />
         {Object.keys(inputs).map((key, index) => (
@@ -71,10 +71,19 @@ const FormularioProducto = () => {
               onChange={handleChange}/>
           </Form.Group>
         ))}{" "}
-        <br />
-        <Button onClick={handleClick}variant="outline-primary">Crear</Button><br/>
-        <Button onClick={handleUpdate}variant="outline-secondary">Editar</Button><br/>
+        
       </div>
+        <div className="text-center " >
+          <div>
+        <Button  style={{width:"150px"}} onClick={handleClick}variant="outline-primary">Crear</Button>
+          </div>
+          <br />
+          <div>
+        <Button  style={{width:"150px"}} onClick={handleUpdate}variant="outline-secondary">Editar</Button>
+          </div>
+          <br/>
+        </div>
+      
       <div
         className="text-center"
         style={{ backgroundColor:"gainsboro",height:"50px" }}>

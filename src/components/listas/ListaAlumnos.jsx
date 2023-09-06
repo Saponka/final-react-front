@@ -10,7 +10,7 @@ const ListaAlumnos = () => {
     
     useEffect(()=>{
      const getAlumnos = async()=>{
-        const {data} = await axios.get('https://final-react-back-production.up.railway.app/alumnos')
+        const {data} = await axios.get('http://localhost:3001/alumnos')
         setAlumnos(data.alumno);
        console.log(data.alumno);
         }
@@ -28,7 +28,7 @@ const ListaAlumnos = () => {
         confirmButtonText: 'Si, Eliminar!'
       }).then((result) => {
         if (result.isConfirmed) {
-          const {data} =  axios.delete("https://final-react-back-production.up.railway.app/eliminarAlumno/" + id);
+          const {data} =  axios.delete("http://localhost:3001/eliminarAlumno/" + id);
           console.log(data);
           setAlumnos(alumnos.filter(alumno => alumno._id !== id))
           Swal.fire(
@@ -82,6 +82,7 @@ const ListaAlumnos = () => {
               </tr>
             ))}</tbody>
         </Table>
+        <Button variant="outline-dark" href="/home">Volver</Button>
       </div>
       
     </>
