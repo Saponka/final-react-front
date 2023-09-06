@@ -8,6 +8,7 @@
     grid-auto-rows: 34rem;
     grid-template-columns: repeat(auto-fill,minmax( min(100%,18rem),1fr));
     justify-content: center;
+    width:52
 }
 .card{
     box-shadow: 0 10px 25px #595b5c, 0 5px 5px rgb(31, 30, 30);
@@ -69,3 +70,4 @@ transform: scale(1.5);
      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);  
      display: grid;
   }
+  /* listas */
